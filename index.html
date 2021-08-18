@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="TheRandom">
+
+  <meta property="og:title" content="A Nintendo Switch profile generator">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Generate Nintendo Switch Profiles Easily">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <!-- Font Awesome -->
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+  /link>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet">
+
+ 
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  
+  <header class="pageBanner" style="background-color:#444444;color:#6ef0d6">
+  <h2 style=" text-align: center;">Switch Profile Generator</h2>
+  </header>
+  <div class="container-fluid" style="width:100%;margin-left: 0px;margin-right: 0px;">
+  <div class="row">
+      <div class="col-sm-6" style="padding-left: 0px;padding-right: 0px; width:50%;">
+        <div class="formDiv" >
+          <input class="textInput" type="url" name="profileUrl" id="profileUrl" placeholder="Profile Picture URLf">
+          <input class="textInput" type="text" name="username" id="username" placeholder="username" minlength="1" maxlength="10" required>
+          <input class="textInput" type="text" name="description" id="desc" placeholder="Talk About Yourself Here..." minlength="20" maxlength="300" required >
+          <input class="textInput" type="text" name="friendCodeIn" id="friendCodeIn" placeholder="XXXX-XXXX-XXXX-XXXX" minLength="17" maxlength="17" required onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" />
+          <label for="borderColor" style="margin-left:3%;">Select a border color:</label>
+          <input type="color" id="borderColor" name="borderColor" style="margin-left:3%;">
+          <div class="input-group">
+          <div class="form-outline">
+          <input id="search-input" type="search" class="form-control" style="border-radius:15px; border:2px solid #0ac77b;margin-left:8.5%;padding-left:20px;" disabled/>
+          <label id="searchLabel" class="form-label" for="search-input" style="font-size:20px;     margin-left:5%;"hidden=false>Search</label>
+          <div class="searchresult" id="searchResult" style="margin-left:8.5%;font-size:20px"hidden=true>
+          </div>
+          </div>
+          </div>
+
+          <ol name="gameList" style="margin-left:3%;">
+            <li id="gameName1">Not Set</li> <input type="button" id="Game1" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
+            <li id="gameName2">Not Set</li> <input type="button" id="Game2" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
+            <li id="gameName3">Not Set</li> <input type="button" id="Game3" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
+          </ol>
+          
+        </div>
+      </div>
+      
+      <div class="col-sm-6" style="width:50%;background-color:#2d2d2d">
+        <div class="mainDiv" id="mainDiv" style="color:#6ef0d6">
+          <div class="bannerDiv" id="banner">
+            <div class="flex-container">
+              <img id="profilePic" class="profile" src="https://play.nintendo.com/images/Masthead_Bowser.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png" width="60" height="60" vertical-align:middle;>
+              <div class="flex-container2">
+                  <h3 id="name" style="margin-top:0px; margin-bottom:0px;">Sample Name</h3>
+                  <h6 id="friendCode" style="margin-bottom: 0px;margin-top: 0px;">SW-0123-4567-8910</h6>
+              </div>
+            </div>
+            </div>
+            <div class="descDiv">
+              <h5 style="margin-left: 10px;margin-bottom:0px">About Me</h5>
+              <h7 id="about" style="margin-left: 10px;margin-bottom:10px;box-decoration-break: clone;word-wrap: break-word">About You</h7>
+              <h5 style="margin-left:10px;">Favorite Games</h5>
+              <div class="flex-container" style="margin-left:0px">
+                <img id="art1" class="gameArt" src="https://art.gametdb.com/switch/cover/US/AAAAA.jpg?1523050900" title="Legend Of Zelda: Breath Of The Wild" >
+
+                <img id="art2" class="gameArt" src="https://art.gametdb.com/switch/cover/US/AABPA.jpg?1523051489"title="Mariokart 8 Deluxe">
+
+                <img id="art3" class="gameArt" src="https://art.gametdb.com/switch/cover/US/AAACA.jpg?1523051489"title="Super Mario Oddesey">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/games.js"></script>
+    <script src="js/scripts.js"></script>
+
+
+  
+</body>
+</html>

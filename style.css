@@ -1,0 +1,158 @@
+
+@media only screen and (max-width: 575px) {
+    .formDiv{min-height:200px;max-height:10000px;}
+
+}
+.bannerDiv{
+
+    text-align:left;
+    border-bottom: 3px solid #6ef0d6;
+    object-fit: contain;
+    max-height:75px;
+
+
+    
+    
+}
+.mainDiv{
+    display: flex;
+    flex-wrap: wrap;
+    border:4px solid #6ef0d6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius:20px;
+    width:300px;
+    
+    min-height:75px;
+    margin-inline:auto;
+    position: relative;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    
+
+}
+.searchresult {
+    width: 300px;
+    height: 100px;
+    overflow: auto;
+    border-radius:20px;
+    border: 1px solid black;
+    margin-left:3%;
+    font-size:10px
+  }
+    
+.resulttext{
+    border:0px;
+    color:#6ef0d6;
+}
+
+
+
+
+.descDiv{
+    font-family:'Open Sans',sans-serif
+}
+.gameArt {
+
+
+ 
+    margin-left:10px;
+    margin-right:10px;
+    max-width:26%;
+    max-height:26%;
+}
+
+
+.profile{
+    width:20%;
+    height:20%;
+    border-radius:100%;
+    border: 3px solid #6ef0d6;
+    vertical-align:middle;
+    margin-right:10px;
+
+    
+}
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;    
+    padding: 0.2px;
+    margin: 10px;
+    list-style: none;
+    object-fit: contain;
+  }
+.flex-container2{
+    display: flex;
+    flex-flow: column;
+    
+}
+
+
+.formDiv{
+
+    background-color:#555E62;
+    color:#6ef0d6;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    justify-content:center;
+    height:100vh;
+
+    
+
+    
+
+
+}
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.pageBanner{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    left: 25%;
+    width:100%;
+
+    border-bottom:2px solid #6ef0d6
+
+    
+}
+.textInput{
+    position: relative;
+    font-size:20px;
+    border-radius:7px;
+    border:2px solid #6ef0d6;
+    background-color:#2d2d2d;
+    padding-left: 2;
+    padding-right:0;
+    margin-top:1%;
+    margin-left:3%;
+    margin-bottom:1%;
+    width:90%;
+    color:#6ef0d6;
+
+}
+.searchIn{
+    color:#6ef0d6;
+
+}
+.mainButton{
+    border:2px solid #6ef0d6;
+    background-color:#2d2d2d;
+    color:#73eed7;
+    border-radius:20px;
+}
+.mainButton:hover{
+    background-color:#444444;
+}
