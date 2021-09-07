@@ -2,6 +2,8 @@
 const searchBar = document.getElementById('search-input');
 let gameLi=[]
 var returnVal;
+Header("Access-Control-Allow-Origin: *");
+
 
 
 let currentGame=null
@@ -17,7 +19,14 @@ function changeGame(gameNo){
 
 }
 function generateImage(){
-    GrabzIt(key).ConvertHTML("")
+    html2canvas(document.getElementById("mainDiv"),{useCORS: true}).then(function(canvas) {
+        const link = document.createElement('a')
+        link.href=canvas.toDataURL("img/png")
+        link.download = 'switchProfile'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+    });
 }
 function validUrl(str) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+
@@ -148,3 +157,4 @@ document.getElementById("profileUrl").addEventListener("change",pfpUrl)
 document.getElementById("Game1").addEventListener("click",function(){changeGame(1)});
 document.getElementById("Game2").addEventListener("click",function(){changeGame(2)});
 document.getElementById("Game3").addEventListener("click",function(){changeGame(3)});
+document.getElementById("imgGenerate").addEventListener("click",generateImage)
