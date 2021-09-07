@@ -2,9 +2,10 @@
 
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet"> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:description" content="Generate Nintendo Switch Profiles Easily">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/@grabzit/js@3.5.1/grabzit.min.js"></script>
   <!-- Font Awesome -->
   <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -36,7 +37,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+  <script type='text/javascript' src='config.js'></script>
 </head>
 
 <body>
@@ -47,28 +48,36 @@
   </header>
   <div class="container-fluid" style="width:100%;margin-left: 0px;margin-right: 0px;">
   <div class="row">
-      <div class="col-sm-6" style="padding-left: 0px;padding-right: 0px; width:50%;">
+      <div class="col-sm-6" style="padding-left: 0px;padding-right: 0px; width:50%;background-color:#555E62">
         <div class="formDiv" >
-          <input class="textInput" type="url" name="profileUrl" id="profileUrl" placeholder="Profile Picture URLf">
+        <label style="font-size:20px;margin-left:3%; margin-bottom:0px;"> Profile Picture URL </label>
+        <input class="textInput" type="url" name="profileUrl" id="profileUrl" placeholder="Profile Picture URL" >
+        
+        <label style="font-size:20px;margin-left:3%; margin-bottom:0px;"> Username </label>
           <input class="textInput" type="text" name="username" id="username" placeholder="username" minlength="1" maxlength="10" required>
+          <label style="font-size:20px;margin-left:3%; margin-bottom:0px;"> Description </label>
           <input class="textInput" type="text" name="description" id="desc" placeholder="Talk About Yourself Here..." minlength="20" maxlength="300" required >
-          <input class="textInput" type="text" name="friendCodeIn" id="friendCodeIn" placeholder="XXXX-XXXX-XXXX-XXXX" minLength="17" maxlength="17" required onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" />
+          <label style="font-size:20px;margin-left:3%; margin-bottom:0px;"> Friend Code </label>
+          <input class="textInput" type="text" name="friendCodeIn" id="friendCodeIn" placeholder="Friend Code(XXXX-XXXX-XXXX-XXXX)" minLength="17" maxlength="17" required onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" />
           <label for="borderColor" style="margin-left:3%;">Select a border color:</label>
           <input type="color" id="borderColor" name="borderColor" style="margin-left:3%;">
           <div class="input-group">
           <div class="form-outline">
-          <input id="search-input" type="search" class="form-control" style="border-radius:15px; border:2px solid #0ac77b;margin-left:8.5%;padding-left:20px;" disabled/>
+           
+          <input id="search-input" type="search" class="form-control" style="border-radius:15px; border:2px solid #0ac77b;margin-left:8.5%;padding-left:3%;" disabled/>
           <label id="searchLabel" class="form-label" for="search-input" style="font-size:20px;     margin-left:5%;"hidden=false>Search</label>
           <div class="searchresult" id="searchResult" style="margin-left:8.5%;font-size:20px"hidden=true>
           </div>
           </div>
           </div>
-
+         <p style="font-size:15px;margin-left:3%"> To select a game, click on "Add Game" and then type the name of the game into the search bar and click on the game. We will try our best to get the GameArt but it may not be available.</p>
           <ol name="gameList" style="margin-left:3%;">
-            <li id="gameName1">Not Set</li> <input type="button" id="Game1" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
-            <li id="gameName2">Not Set</li> <input type="button" id="Game2" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
-            <li id="gameName3">Not Set</li> <input type="button" id="Game3" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px">
+            <li id="gameName1">Not Set</li> <input type="button" id="Game1" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px;padding-left: 10px;padding-right: 10px;">
+            <li id="gameName2">Not Set</li> <input type="button" id="Game2" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px;padding-left: 10px;padding-right: 10px;">
+            <li id="gameName3">Not Set</li> <input type="button" id="Game3" value="Add/Edit Game" class="mainButton" style="max-width:300px; height:0.75%; font-size:20px;padding-left: 10px;padding-right: 10px;">
           </ol>
+
+          <input type="button" id="imgGenerate" value="Generate Image" class="mainButton" style="margin-left:3%;margin-bottom:3%;">
           
         </div>
       </div>

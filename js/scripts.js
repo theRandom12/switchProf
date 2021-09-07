@@ -2,7 +2,7 @@
 const searchBar = document.getElementById('search-input');
 let gameLi=[]
 var returnVal;
-
+var key=config.GRABZIT_API_KEY;
 
 let currentGame=null
 let gamesLi=games
@@ -15,6 +15,9 @@ function changeGame(gameNo){
     currentGame=gameNo
     searchBar.disabled=false
 
+}
+function generateImage(){
+    GrabzIt(key).ConvertPage({"target": "#mainDiv", "bheight": -1, "height": -1, "width": -1}).Create();
 }
 function validUrl(str) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+
@@ -53,7 +56,7 @@ function searchGame(){
             let i=resultSet[j]
             let gameText=document.createElement("button")
             gameText.type="button"
-            gameText.style="border:none;background:none;"
+            gameText.style="border:none;background:none;color:#6ef0d6";
             gameText.innerHTML=i.name
             gameText.addEventListener("click",function(){addGame(i.name,i.id)})
             document.getElementById("searchResult").appendChild(gameText)
@@ -145,3 +148,4 @@ document.getElementById("profileUrl").addEventListener("change",pfpUrl)
 document.getElementById("Game1").addEventListener("click",function(){changeGame(1)});
 document.getElementById("Game2").addEventListener("click",function(){changeGame(2)});
 document.getElementById("Game3").addEventListener("click",function(){changeGame(3)});
+document.getElementById("imgGenerate").addEventListener("click",generateImage)

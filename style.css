@@ -1,8 +1,5 @@
 
-@media only screen and (max-width: 575px) {
-    .formDiv{min-height:200px;max-height:10000px;}
 
-}
 .bannerDiv{
 
     text-align:left;
@@ -18,7 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     border:4px solid #6ef0d6;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 15px;
     font-weight: 400;
     border-radius:20px;
@@ -39,7 +36,9 @@
     height: 100px;
     overflow: auto;
     border-radius:20px;
-    border: 1px solid black;
+    border: 1px solid #6ef0d6;
+    background-color:#2d2d2d;
+    color:#6ef0d6;
     margin-left:3%;
     font-size:10px
   }
@@ -53,7 +52,7 @@
 
 
 .descDiv{
-    font-family:'Open Sans',sans-serif
+    font-family:'Urbanist',sans-serif
 }
 .gameArt {
 
@@ -100,11 +99,11 @@
     background-color:#555E62;
     color:#6ef0d6;
 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 30px;
     font-weight: 400;
     justify-content:center;
-    height:100vh;
+    min-height:100vh;
 
     
 
@@ -118,7 +117,7 @@
 }
 
 .pageBanner{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 30px;
     font-weight: 400;
     left: 25%;
@@ -134,15 +133,17 @@
     border-radius:7px;
     border:2px solid #6ef0d6;
     background-color:#2d2d2d;
-    padding-left: 2;
+    padding-left: 2px;
     padding-right:0;
-    margin-top:1%;
+
     margin-left:3%;
     margin-bottom:1%;
     width:90%;
-    color:#6ef0d6;
+    color:#6ef0d6; 
+    
 
 }
+
 .searchIn{
     color:#6ef0d6;
 
@@ -152,6 +153,8 @@
     background-color:#2d2d2d;
     color:#73eed7;
     border-radius:20px;
+    padding-left:10px;
+    padding-right:10px;
 }
 .mainButton:hover{
     background-color:#444444;
