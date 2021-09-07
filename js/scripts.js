@@ -2,7 +2,7 @@
 const searchBar = document.getElementById('search-input');
 let gameLi=[]
 var returnVal;
-Header("Access-Control-Allow-Origin: *");
+
 
 
 
