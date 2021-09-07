@@ -2,7 +2,7 @@
 const searchBar = document.getElementById('search-input');
 let gameLi=[]
 var returnVal;
-var key=config.GRABZIT_API_KEY;
+
 
 let currentGame=null
 let gamesLi=games
@@ -17,7 +17,7 @@ function changeGame(gameNo){
 
 }
 function generateImage(){
-    GrabzIt(key).ConvertPage({"target": "#mainDiv", "bheight": -1, "height": -1, "width": -1}).Create();
+    GrabzIt(key).ConvertHTML("")
 }
 function validUrl(str) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+
@@ -148,4 +148,3 @@ document.getElementById("profileUrl").addEventListener("change",pfpUrl)
 document.getElementById("Game1").addEventListener("click",function(){changeGame(1)});
 document.getElementById("Game2").addEventListener("click",function(){changeGame(2)});
 document.getElementById("Game3").addEventListener("click",function(){changeGame(3)});
-document.getElementById("imgGenerate").addEventListener("click",generateImage)
