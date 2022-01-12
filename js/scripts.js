@@ -139,6 +139,7 @@ function borderColorChange(){
     document.getElementById("mainDiv").style.borderColor=document.getElementById("borderColor").value
     document.getElementById("mainDiv").style.borderColor=document.getElementById("borderColor").value
     document.getElementById("mainDiv").style.borderColor=document.getElementById("borderColor").value
+    document.getElementById("mainDiv").style.color=document.getElementById("borderColor").value
 }
 function pfpUrl(){
     if(validUrl(document.getElementById("profileUrl").value)){
